@@ -2,6 +2,7 @@
 layout: post
 title:  "Jekyll true minimal theme"
 date:   2018-01-01 23:22:40 +0300
+tags:   dos, retro, software
 ---
 
 True minimal theme is extremely lightweight and ascetic jekyll theme.
