@@ -8,6 +8,7 @@ layout: default
 
 {{ content }}
 
+<div class="tags">
 {% capture tags %}
   {% for tag in site.tags %}
     {{ tag[0] }}
@@ -15,8 +16,8 @@ layout: default
 {% endcapture %}
 {% assign sortedtags = tags | split:' ' | sort %}
 {% for tag in sortedtags %}
-    <a href="/tags/{{ tag }}/">{{ tag }}</a><br>
+    <span">{{ tag }}</span>
 {% endfor %}
-        
+</div>        
 {% if site.disqus-id %} {% include comments.html %} {% endif %}
 
