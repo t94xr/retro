@@ -1,8 +1,8 @@
 name: "Retro Exploration"
 description: ""
 
-url: '' 
-baseurl: ''
+url: '/' 
+baseurl: '/'
 
 markdown: kramdown
 markdown_ext: "markdown,mkdown,mkdn,mkd,md"
