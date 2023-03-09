@@ -2,47 +2,9 @@
 layout: default
 ---
 
-{% for post in paginator.posts %}
-<section>
-  <h2>
-    <a href='{{ site.url }}{{ post.url }}' title='{{ post.title }}'>
-      {{ post.title }}
-    </a>
-  </h2>
-
-  <div class="tags">
-    {% capture tags %}
-      {% for tag in site.tags %}
-        {{ tag[0] }}
-      {% endfor %}
-    {% endcapture %}
-    {% assign sortedtags = tags | split:' ' | sort %}
-    {% for tag in sortedtags %}
-        <span>{{ tag }}</span>
-        {% endfor %}
-        {% endfor %}
-    
-</div>
-
-
-
-{% if paginator.previous_page %}
-<a href='{{ site.url }}{{ paginator.previous_page_path }}'>Previous</a>
-{% endif %}
-
-&mdash; {{ paginator.page }} of {{ paginator.total_pages }} &mdash;
-
-{% if paginator.next_page %}
-<a href='{{ site.url }}{{ paginator.next_page_path }}'>Next</a>
-{% endif %}
-
-
-
-
-
 <ul>
   {% for post in site.posts %}
-  <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time></li>
+  <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
   
   {% capture tags %}
   {% for tag in site.tags %}
@@ -51,9 +13,9 @@ layout: default
 {% endcapture %}
 {% assign sortedtags = tags | split:' ' | sort %}
 {% for tag in sortedtags %}
-    <span>{{ tag }}</span>
+    <span class="tags {{ tag }}">{{ tag }}</span>
     {% endfor %}
-  
+  </li>
 
   {% endfor %}
 </ul>
