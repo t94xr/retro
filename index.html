@@ -9,7 +9,7 @@ layout: default
       {{ post.title }}
     </a>
   </h2>
-  
+  <p>{{ post.tags }}</p>
   <p>{{ post.excerpt | strip_html | truncate: 250 }}</p>
 </section>       
 {% endfor %}
