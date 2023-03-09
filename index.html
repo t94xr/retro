@@ -2,9 +2,9 @@
 layout: default
 ---
 
-<ul>
-  {% for post in site.posts %}
-  <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
+<p>
+{% for post in site.posts %}
+  <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
   
   {% capture tags %}
   {% for tag in site.tags %}
@@ -15,7 +15,5 @@ layout: default
 {% for tag in sortedtags %}
     <span class="tags {{ tag }}">{{ tag }}</span>
     {% endfor %}
-  </li>
-
-  {% endfor %}
-</ul>
+  </p>
+{% endfor %}
