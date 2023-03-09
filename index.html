@@ -9,12 +9,10 @@ layout: default
       {{ post.title }}
     </a>
   </h2>
-  {% for tag in sortedtags %}
-    <span>{{ tag }}</span>
-{% endfor %}
-  <p>{{ post.excerpt | strip_html | truncate: 250 }}</p>
-</section>       
-{% endfor %}
+  {% for tag in page.tags %}
+    {% capture tag_name %}{{ tag }}{% endcapture %}
+    <a href="/tag/{{ tag_name }}"><code class="highligher-rouge"><nobr>{{ tag_name }}</nobr></code>&nbsp;</a>
+  {% endfor %}
 
 {% if paginator.previous_page %}
 <a href='{{ site.url }}{{ paginator.previous_page_path }}'>Previous</a>
