@@ -19,7 +19,9 @@ layout: default
     {% assign sortedtags = tags | split:' ' | sort %}
     {% for tag in sortedtags %}
         <span">{{ tag }}</span>
-    {% endfor %}
+        {% endfor %}
+        {% endfor %}
+    
 </div>
 
 
