@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-
+<div style="padding-left: 10%; padding-right: 10%;">
 <p>
 {% for post in site.posts %}
   <a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time>
@@ -17,3 +17,4 @@ layout: default
     {% endfor %}
   </p>
 {% endfor %}
+</div>
