@@ -26,3 +26,11 @@ sass:
     style: :compressed
     sass_dir: assets/css/
 
+collections:
+  pages:
+    output: true
+    permalink: /:name.html
+  posts:
+    output: true
+    #permalink: /:year/:month/:day/:slug
+    permalink: /:year:month-:slug.html
