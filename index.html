@@ -18,7 +18,7 @@ layout: default
     {% endcapture %}
     {% assign sortedtags = tags | split:' ' | sort %}
     {% for tag in sortedtags %}
-        <span">{{ tag }}</span>
+        <span>{{ tag }}</span>
         {% endfor %}
         {% endfor %}
     
@@ -36,3 +36,24 @@ layout: default
 <a href='{{ site.url }}{{ paginator.next_page_path }}'>Next</a>
 {% endif %}
 
+
+
+
+
+<ul>
+  {% for post in site.posts %}
+  <li><a href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a><time datetime="{{ post.date | date_to_xmlschema }}">{{ post.date | date: "%b %-d, %Y" }}</time></li>
+  
+  {% capture tags %}
+  {% for tag in site.tags %}
+    {{ tag[0] }}
+  {% endfor %}
+{% endcapture %}
+{% assign sortedtags = tags | split:' ' | sort %}
+{% for tag in sortedtags %}
+    <span>{{ tag }}</span>
+    {% endfor %}
+  
+
+  {% endfor %}
+</ul>
